@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(210, 11%, 15%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(38, 92%, 50%);
+  --secondary-foreground: hsl(0, 0%, 9%);
+  --accent: hsl(158, 64%, 52%);
+  --accent-foreground: hsl(0, 0%, 9%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.75rem;
+  
+  /* Custom shopping app colors */
+  --app-primary: hsl(210, 11%, 15%);
+  --app-secondary: hsl(38, 92%, 50%);
+  --app-accent: hsl(158, 64%, 52%);
+  --app-background: hsl(210, 20%, 98%);
+  --app-text: hsl(210, 11%, 11%);
+  --app-neutral: hsl(215, 16%, 47%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(210, 11%, 15%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: hsl(210, 20%, 98%);
+    color: hsl(210, 11%, 11%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  .app-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 transition-shadow duration-200;
+  }
+  
+  .app-card:hover {
+    @apply shadow-md;
+  }
+  
+  .category-emoji {
+    @apply text-lg;
+  }
+  
+  .floating-button {
+    @apply fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center;
+    background-color: hsl(210, 11%, 15%);
+    color: white;
+  }
+  
+  .floating-button:hover {
+    @apply shadow-xl;
+    background-color: hsl(210, 11%, 10%);
+  }
+  
+  .progress-bar {
+    @apply w-full rounded-full h-2 transition-all duration-300;
+    background-color: hsl(220, 13%, 91%);
+  }
+  
+  .progress-fill {
+    @apply h-2 rounded-full transition-all duration-300;
+    background-color: hsl(158, 64%, 52%);
+  }
+  
+  .checkbox-button {
+    @apply w-5 h-5 border-2 rounded-full flex items-center justify-center transition-colors duration-200;
+  }
+  
+  .checkbox-button.unchecked {
+    @apply border-gray-300 hover:border-green-500;
+  }
+  
+  .checkbox-button.checked {
+    background-color: hsl(158, 64%, 52%);
+    border-color: hsl(158, 64%, 52%);
+  }
+}
+
+@layer utilities {
+  .touch-friendly {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
