@@ -1,3 +1,9 @@
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test"
+}
+
 {
   "name": "rest-express",
   "version": "1.0.0",
